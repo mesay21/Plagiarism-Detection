@@ -114,9 +114,12 @@ if __name__ == '__main__':
     parser.add_argument('--seed', type=int, default=1, metavar='S',
                         help='random seed (default: 1)')
     
-    ## TODO: Add args for the three model parameters: input_features, hidden_dim, output_dim
-    # Model Parameters
-    
+    parser.add_argument('--input_features', type=int, default=3, metavar='I',
+                       help='number of input features')
+    parser.add_argument('--hidden_dim', type=int, default=8, metavar='H',
+                       help='number of neurons in the hidden layer')
+    parser.add_argument('--output_dim', type=int, default=1, metavar='O',
+                       help='number of classes')
     
     # args holds all passed-in arguments
     args = parser.parse_args()
