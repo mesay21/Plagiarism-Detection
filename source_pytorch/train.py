@@ -103,11 +103,11 @@ if __name__ == '__main__':
     # SageMaker parameters, like the directories for training data and saving models; set automatically
     # Do not need to change
     parser.add_argument('--output-data-dir', type=str, default=os.environ['SM_OUTPUT_DATA_DIR'])
-    parser.add_argument('--model_dir', type=str, default=os.environ['SM_MODEL_DIR'])
-    parser.add_argument('--data_dir', type=str, default=os.environ['SM_CHANNEL_TRAIN'])
+    parser.add_argument('--model-dir', type=str, default=os.environ['SM_MODEL_DIR'])
+    parser.add_argument('--data-dir', type=str, default=os.environ['SM_CHANNEL_TRAIN'])
     
     # Training Parameters, given
-    parser.add_argument('--batch_size', type=int, default=10, metavar='N',
+    parser.add_argument('--batch-size', type=int, default=10, metavar='N',
                         help='input batch size for training (default: 10)')
     parser.add_argument('--epochs', type=int, default=10, metavar='N',
                         help='number of epochs to train (default: 10)')
@@ -122,8 +122,6 @@ if __name__ == '__main__':
                        help='number of classes (default: 1)')
     parser.add_argument('--lr', type=float, default=0.001, metavar='LR',
                        help='Learning rate (default 0.001)')
-    parser.add_argument('--epochs', type=int, default=25, metavar='E',
-                       help='number of training epochs (default: 25)')
     
     # args holds all passed-in arguments
     args = parser.parse_args()
@@ -143,7 +141,7 @@ if __name__ == '__main__':
     # Don't forget to move your model .to(device) to move to GPU , if appropriate
     model = BinaryClassifier(args.input_features, args.hidden_dim, args.output_dim).to(device)
 
-    optimizer = optim.Adam(args.lr)
+    optimizer = optim.Adam(lr=args.lr)
     criterion = torch.nn.BCELoss()
 
     # Trains the model (given line of code, which calls the above training function)
