@@ -4,3 +4,4 @@ data/*
 data.zip
 __MACOSX/*
 __pycache__/*
+plagiarism_data/*
