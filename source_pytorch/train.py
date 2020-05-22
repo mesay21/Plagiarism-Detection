@@ -149,14 +149,13 @@ if __name__ == '__main__':
     # Trains the model (given line of code, which calls the above training function)
     train(model, train_loader, args.epochs, criterion, optimizer, device)
 
-    ## TODO: complete in the model_info by adding three argument names, the first is given
     # Keep the keys of this dictionary as they are 
     model_info_path = os.path.join(args.model_dir, 'model_info.pth')
     with open(model_info_path, 'wb') as f:
         model_info = {
             'input_features': args.input_features,
-            'hidden_dim': <add_arg>,
-            'output_dim': <add_arg>,
+            'hidden_dim': args.hidden_dim,
+            'output_dim': args.output_dim,
         }
         torch.save(model_info, f)
         
