@@ -26,8 +26,9 @@ class BinaryClassifier(nn.Module):
         """
         super(BinaryClassifier, self).__init__()
 
-        # define any initial layers, here
-        
+        self.fc1 = nn.Linear(input_features, hidden_dim)
+        self.fc2 = nn.Linear(hidden_dim, output_dim)
+        self.sig = nn.Sigmoid()
 
     
     ## TODO: Define the feedforward behavior of the network
