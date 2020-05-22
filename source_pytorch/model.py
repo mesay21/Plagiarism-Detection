@@ -39,7 +39,9 @@ class BinaryClassifier(nn.Module):
         :return: A single, sigmoid-activated value as output
         """
         
-        # define the feedforward behavior
+        x = F.relu(self.fc1(x))
+        x = self.fc2(x)
+        x = self.sig(x)
         
         return x
     
