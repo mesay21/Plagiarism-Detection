@@ -122,6 +122,8 @@ if __name__ == '__main__':
                        help='number of classes (default: 1)')
     parser.add_argument('--lr', type=float, default=0.001, metavar='LR',
                        help='Learning rate (default 0.001)')
+    parser.add_argument('--epochs', type=int, default=25, metavar='E',
+                       help='number of training epochs (default: 25)')
     
     # args holds all passed-in arguments
     args = parser.parse_args()
