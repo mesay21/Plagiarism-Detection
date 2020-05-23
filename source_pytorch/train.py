@@ -141,7 +141,7 @@ if __name__ == '__main__':
     # Don't forget to move your model .to(device) to move to GPU , if appropriate
     model = BinaryClassifier(args.input_features, args.hidden_dim, args.output_dim).to(device)
 
-    optimizer = optim.Adam(lr=args.lr)
+    optimizer = optim.Adam(model.parameters(), lr=args.lr)
     criterion = torch.nn.BCELoss()
 
     # Trains the model (given line of code, which calls the above training function)
