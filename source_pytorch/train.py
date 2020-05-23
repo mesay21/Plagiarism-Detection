@@ -88,7 +88,7 @@ def train(model, train_loader, epochs, criterion, optimizer, device):
             
             total_loss += loss.data.item()
 
-        print("Epoch: {}, Loss: {}".format(epoch, total_loss / len(train_loader)))
+        print("Epoch: {}, Loss: {},".format(epoch, total_loss / len(train_loader)))
 
 
 ## TODO: Complete the main code
